@@ -248,6 +248,7 @@ public class PubnubDemoConsole {
 
             case 0:
                 displayMenuOptions();
+                break;
             case 1:
                 channelName = getStringFromConsole("Subscribe: Enter Channel name");
                 subscribe(channelName);
