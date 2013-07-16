@@ -1,12 +1,11 @@
 /**
  *
  */
-package com.pubnub.gwt.api.client;
+package com.pubnub.api;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.json.client.JSONArray;
 import com.google.gwt.json.client.JSONObject;
-import com.pubnub.gwt.api.client.Callback;
 
 /**
  * @author Pubnub
@@ -37,7 +36,7 @@ public class Pubnub extends JavaScriptObject {
     private static native void _time(Callback cb) /*-{
         $wnd.PUBNUB.time(
             function(message){
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)("", message.toString());
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)("", message.toString());
             }
         );
     }-*/;
@@ -45,7 +44,7 @@ public class Pubnub extends JavaScriptObject {
     private final native void _uuid(Callback cb) /*-{
         this.uuid(
             function(message){
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)("", message);
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)("", message);
             }
         );
     }-*/;
@@ -60,7 +59,7 @@ public class Pubnub extends JavaScriptObject {
             "channel" : channel,
             "message" : eval("(" + obj + ")"),
             "callback" : function(message){
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
             }
         });
     }-*/;
@@ -70,7 +69,7 @@ public class Pubnub extends JavaScriptObject {
             "channel" : channel,
             "message" : obj,
             "callback" : function(message){
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
             }
         });
 
@@ -80,19 +79,19 @@ public class Pubnub extends JavaScriptObject {
         this.subscribe({
             "channel" : channel,
             "callback" :   function(message){
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
             },
             "error" :   function(message){
-                cb.@com.pubnub.gwt.api.client.Callback::error(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
+                cb.@com.pubnub.api.Callback::error(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
             },
             "connect" : function(){
-                cb.@com.pubnub.gwt.api.client.Callback::connect(Ljava/lang/String;)(channel);
+                cb.@com.pubnub.api.Callback::connect(Ljava/lang/String;)(channel);
             },
             "reconnect" : function(){
-                cb.@com.pubnub.gwt.api.client.Callback::reconnect(Ljava/lang/String;)(channel);
+                cb.@com.pubnub.api.Callback::reconnect(Ljava/lang/String;)(channel);
             },
             "disconnect" : function(){
-                cb.@com.pubnub.gwt.api.client.Callback::disconnect(Ljava/lang/String;)(channel);
+                cb.@com.pubnub.api.Callback::disconnect(Ljava/lang/String;)(channel);
             },
         });
     }-*/;
@@ -102,7 +101,7 @@ public class Pubnub extends JavaScriptObject {
             "channel" : channel,
             "limit"   : limit,
             "callback" : function(message) {
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
             }
         });
     }-*/;
@@ -117,7 +116,7 @@ public class Pubnub extends JavaScriptObject {
         this.here_now({
             "channel" : channel,
             "callback" : function(message){
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
             }
         });
     }-*/;
@@ -135,7 +134,7 @@ public class Pubnub extends JavaScriptObject {
         param["reverse"] = reverse;
 
         param["callback"] = function(message) {
-                cb.@com.pubnub.gwt.api.client.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
+                cb.@com.pubnub.api.Callback::callback(Ljava/lang/String;Ljava/lang/Object;)(channel, message);
             };
 
         this.detailedHistory(param);

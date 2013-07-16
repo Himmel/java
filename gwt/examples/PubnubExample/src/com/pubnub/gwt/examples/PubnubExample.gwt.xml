@@ -20,6 +20,6 @@
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
   <source path='shared'/>
-  <script src="http://cdn.pubnub.com/pubnub-3.3.js"/>
+  <script src="http://cdn.pubnub.com/pubnub-3.5.3.js"/>
 
 </module>

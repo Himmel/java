@@ -1,7 +1,7 @@
 /**
  *
  */
-package com.pubnub.gwt.api.client;
+package com.pubnub.api;
 
 /**
  * @author Pubnub
