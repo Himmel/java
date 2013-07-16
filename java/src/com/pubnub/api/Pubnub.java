@@ -608,8 +608,8 @@ public class Pubnub extends PubnubCore {
         }
 
         String sign_input = this.SUBSCRIBE_KEY + "\n" + this.PUBLISH_KEY + "\n"
-                            + "grant" + "\n" + "auth=" + auth_key + "&" + "channel="
-                            + channel + "&" + "r=" + r + "&" + "timestamp=" + timestamp
+                            + "grant" + "\n" + "auth=" + PubnubUtil.urlEncode(auth_key) + "&" + "channel="
+                            + PubnubUtil.urlEncode(channel) + "&" + "r=" + r + "&" + "timestamp=" + timestamp
                             + ((ttl > -1)?"&" + "ttl=" + ttl:"")
                             + "&" + "w=" + w;
 
@@ -744,8 +744,8 @@ public class Pubnub extends PubnubCore {
         }
 
         String sign_input = this.SUBSCRIBE_KEY + "\n" + this.PUBLISH_KEY + "\n"
-                            + "audit" + "\n" + "channel="
-                            + channel + "&" + "timestamp=" + timestamp;
+                            + PubnubUtil.urlEncode("audit") + "\n" + "channel="
+                            + PubnubUtil.urlEncode(channel) + "&" + "timestamp=" + timestamp;
 
         try {
             signature = pamSign(this.SECRET_KEY, sign_input);
@@ -809,8 +809,8 @@ public class Pubnub extends PubnubCore {
         }
 
         String sign_input = this.SUBSCRIBE_KEY + "\n" + this.PUBLISH_KEY + "\n"
-                            + "audit" + "\n" + "auth=" + auth_key + "&" + "channel="
-                            + channel + "&" + "timestamp=" + timestamp;
+                            + "audit" + "\n" + "auth=" + PubnubUtil.urlEncode(auth_key) + "&" + "channel="
+                            + PubnubUtil.urlEncode(channel) + "&" + "timestamp=" + timestamp;
 
 
         try {
